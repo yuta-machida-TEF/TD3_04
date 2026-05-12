@@ -1,4 +1,4 @@
-#include "P_DeathParticle.h"
+﻿#include "P_DeathParticle.h"
 #include "KamataEngine.h"
 #include "Player.h"
 #include"Game.h"
@@ -9,7 +9,7 @@
 #define NOMINMAX
 
 using namespace KamataEngine;
-//using namespace MathUtility;
+using namespace MathUtility;
 
 void P_DeathParticle::Initialize(Model* model, Camera* camera, KamataEngine::Vector3 position) 
 {

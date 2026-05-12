@@ -1,7 +1,7 @@
 #include "P_Bullet.h"
 #include "KamataEngine.h"
 using namespace KamataEngine;
-//using namespace MathUtility;
+using namespace MathUtility;
 #include "MyMath.h"
 
 void P_Bullet::Initialize(KamataEngine::Model* model, const KamataEngine::Vector3& position, const KamataEngine::Vector3& velocity)
