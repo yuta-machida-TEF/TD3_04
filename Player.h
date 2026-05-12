@@ -99,13 +99,20 @@ private:
 	// 3Dレティクル用ワールド変換
 	WorldTransform worldTransform3DReticle_;
 
+	// ベクトル正規化
+	Vector3 Normalize(const Vector3& v);
+
+	// 法線変換
+	Vector3 TransformNormal(const Vector3& v, const Matrix4x4& m);
+
 	// カメラ
 	KamataEngine::Camera* camera_;
 
 	KamataEngine::Vector3 velocity_ = {};
 
-	KamataEngine::Vector3 operator*(const KamataEngine::Vector3&);
-
+	KamataEngine::Vector3 operator+=(KamataEngine::WorldTransform & worldTransform3DReticle_);
+	//
+	KamataEngine::Vector3 operator+(const KamataEngine::Vector3& v);
 
 	int32_t maxHP_ = 10000;
 	int32_t hp_ = maxHP_;

@@ -1,6 +1,4 @@
 #include"Player.h"
-
-
 #include <algorithm>
 #include <cassert>
 #include <list>
@@ -164,6 +162,7 @@ void Player::Update()
 
 	// キャラクターの移動ベクトル
 	KamataEngine::Vector3 move = {0, 0, 0};
+
 	// キャラクターの移動速さ
 	const float kCharacterSpeed = 0.2f;
 	// 押した方向で移動ベクトルを変更
