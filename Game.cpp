@@ -4,7 +4,7 @@
 #include <random>
 
 using namespace KamataEngine;
-using namespace MathUtility;
+//using namespace MathUtility;
 
 
 

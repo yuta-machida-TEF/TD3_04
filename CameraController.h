@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 #include "KamataEngine.h"
 
 using namespace KamataEngine;
-using namespace MathUtility;
+//using namespace MathUtility;
 
 class Player;
 class CameraController 

@@ -10,7 +10,7 @@
 #include "math.h"
 
 using namespace KamataEngine;
-using namespace MathUtility;
+//using namespace MathUtility;
 
 #pragma region 行列計算
 
@@ -163,7 +163,7 @@ void Player::Update()
 #pragma region プレイヤーの移動
 
 	// キャラクターの移動ベクトル
-	Vector3 move = {0, 0, 0};
+	KamataEngine::Vector3 move = {0, 0, 0};
 	// キャラクターの移動速さ
 	const float kCharacterSpeed = 0.2f;
 	// 押した方向で移動ベクトルを変更

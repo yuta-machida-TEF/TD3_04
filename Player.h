@@ -13,7 +13,7 @@
 #include "P_Bullet.h"
 
 using namespace KamataEngine;
-using namespace MathUtility;
+//using namespace MathUtility;
 
 class E_Bullet;
 class Recovery;
@@ -79,6 +79,7 @@ public:
 
 #pragma region 座標(ワールド変換)
 
+
 	const KamataEngine::WorldTransform& GetWorldTransform() const { return worldTransform_; }
 
 	const KamataEngine::Vector3& GetVelocity() const { return velocity_; }
@@ -102,6 +103,9 @@ private:
 	KamataEngine::Camera* camera_;
 
 	KamataEngine::Vector3 velocity_ = {};
+
+	KamataEngine::Vector3 operator*(const KamataEngine::Vector3&);
+
 
 	int32_t maxHP_ = 10000;
 	int32_t hp_ = maxHP_;

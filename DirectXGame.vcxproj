@@ -178,7 +178,39 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CameraController.cpp" />
+    <ClCompile Include="Clear.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="E_Bullet.cpp" />
+    <ClCompile Include="E_DeathParticle.cpp" />
+    <ClCompile Include="Fade.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyMath.cpp" />
+    <ClCompile Include="Over.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="P_Bullet.cpp" />
+    <ClCompile Include="P_DeathParticle.cpp" />
+    <ClCompile Include="Recovery.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CameraController.h" />
+    <ClInclude Include="Clear.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="E_Bullet.h" />
+    <ClInclude Include="E_DeathParticle.h" />
+    <ClInclude Include="Fade.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="MapChipField.h" />
+    <ClInclude Include="MyMath.h" />
+    <ClInclude Include="Over.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="P_Bullet.h" />
+    <ClInclude Include="P_DeathParticle.h" />
+    <ClInclude Include="Recovery.h" />
+    <ClInclude Include="Skydome.h" />
+    <ClInclude Include="Title.h" />
+    <ClInclude Include="Tutorial.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
