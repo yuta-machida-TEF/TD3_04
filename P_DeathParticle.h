@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "KamataEngine.h"
 #include"MyMath.h"
 #include<array>
@@ -49,4 +49,7 @@ private:
 
 	// モデル
 	KamataEngine::Model* model_;
+
+	KamataEngine::Vector3 Transform(const KamataEngine::Vector3& vector, const KamataEngine::Matrix4x4& matrix);
+
 };

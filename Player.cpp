@@ -228,7 +228,7 @@ void Player::Update()
 		// プレイヤーから3Dレティクルへの距離
 		const float kDistanceP_To_3DR = 50.0f;
 		// プレイヤーから3Dレティクルへのオフセット(X+1向き)
-		Vector3 offset = {0, 0, 1.0f};
+		KamataEngine::Vector3 offset = {0.0f, 0.0f, 1.0f};
 		// プレイヤーのワールド変換の回転を反映
 		offset = TransformNormal(offset, worldTransform_.matWorld_);
 		// ベクトルの長さを整える

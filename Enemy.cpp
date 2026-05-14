@@ -9,7 +9,7 @@
 #include "math.h"
 
 using namespace KamataEngine;
-using namespace MathUtility;
+//using namespace MathUtility;
 
 void Enemy::Initialize(Model* model, Camera* camera, KamataEngine::Vector3& position)
 {

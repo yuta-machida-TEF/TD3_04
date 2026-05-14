@@ -1,4 +1,4 @@
-﻿#include "E_DeathParticle.h"
+#include "E_DeathParticle.h"
 #include "KamataEngine.h"
 
 #include "Enemy.h"
@@ -10,7 +10,7 @@
 #define NOMINMAX
 
 using namespace KamataEngine;
-using namespace MathUtility;
+//using namespace MathUtility;
 
 void E_DeathParticle::Initialize(KamataEngine::Model* model, KamataEngine::Camera* camera, KamataEngine::Vector3 position) 
 {
@@ -56,7 +56,7 @@ void E_DeathParticle::Update()
 		// 回転角を計算する
 		float angle = kAngleUnit * i;
 		// Z軸まわり回転行列
-		Matrix4x4 matrixRotation = MakeRotateZMatrix(angle);
+		KamataEngine::Matrix4x4 matrixRotation = MakeRotateZMatrix(angle);
 		// 基本ベクトルを回転させて速度ベクトルを得る
 		velocity = Transform(velocity, matrixRotation);
 		// 移動処理

@@ -110,10 +110,6 @@ private:
 
 	KamataEngine::Vector3 velocity_ = {};
 
-	KamataEngine::Vector3 operator+=(KamataEngine::WorldTransform & worldTransform3DReticle_);
-	//
-	KamataEngine::Vector3 operator+(const KamataEngine::Vector3& v);
-
 	int32_t maxHP_ = 10000;
 	int32_t hp_ = maxHP_;
 

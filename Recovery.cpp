@@ -1,6 +1,6 @@
 #include "Recovery.h"
 using namespace KamataEngine;
-using namespace MathUtility;
+//using namespace MathUtility;
 
 
 void Recovery::Initialize(Model* model, Camera* camera, Vector3& position)

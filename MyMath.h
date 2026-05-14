@@ -17,6 +17,14 @@ float Lerp(const float x1, const float x2, float easedT);
 
 KamataEngine::Matrix4x4 operator*(const KamataEngine::Matrix4x4& m1, const KamataEngine::Matrix4x4& m2);
 
+KamataEngine::Vector3 operator+=(const KamataEngine::Vector3& v, const KamataEngine::Vector3& v2);
+//
+KamataEngine::Vector3 operator+(const KamataEngine::Vector3& v1,const KamataEngine::Vector3& v2);
+
+KamataEngine::Vector3 operator*(const KamataEngine::Vector3& v,float s);
+
+
+KamataEngine::Vector3 operator-(const KamataEngine::Vector3& v1, const KamataEngine::Vector3& v2);
 
 float EaseInOut(float x1, float x2, float t);
 

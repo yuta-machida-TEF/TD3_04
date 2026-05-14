@@ -8,22 +8,26 @@ using namespace KamataEngine;
 KamataEngine::Matrix4x4 MakeAffineMatrix(KamataEngine::Vector3& scale, KamataEngine::Vector3& rotation, KamataEngine::Vector3& translation) 
 {
 	// スケーリング行列の作成
-	Matrix4x4 matScale = MakeScaleMatrix(scale);
+	KamataEngine::Matrix4x4 matScale = MakeScaleMatrix(scale);
 
 	// 回転行列の作成
-	Matrix4x4 matRotX = MakeRotateXMatrix(rotation.x);
-	Matrix4x4 matRotY = MakeRotateYMatrix(rotation.y);
-	Matrix4x4 matRotZ = MakeRotateZMatrix(rotation.z);
-	Matrix4x4 matRot = matRotZ * matRotX * matRotY;
+	KamataEngine::Matrix4x4 matRotX = MakeRotateXMatrix(rotation.x);
+	KamataEngine::Matrix4x4 matRotY = MakeRotateYMatrix(rotation.y);
+	KamataEngine::Matrix4x4 matRotZ = MakeRotateZMatrix(rotation.z);
+	KamataEngine::Matrix4x4 matRot = matRotZ * matRotX * matRotY;
 
 	// 平行移動行列の作成
-	Matrix4x4 matTrans = MakeTranslateMatrix(translation);
+	KamataEngine::Matrix4x4 matTrans = MakeTranslateMatrix(translation);
 
 	// スケーリング、回転、平行移動の合成
-	Matrix4x4 matWorld = matScale * matRot * matTrans;
+	KamataEngine::Matrix4x4 matWorld = matScale * matRot * matTrans;
 
 	return matWorld;
 }
+
+float Lerp(float x1, float x2, float t) { return (1.0f - t) * x1 + t * x2; }
+
+
 
 // イージング
 float EaseInOut(float x1, float x2, float t)
@@ -31,6 +35,8 @@ float EaseInOut(float x1, float x2, float t)
 	float easedT = -(std::cosf(std::numbers::pi_v<float> * t) - 1.0f) / 2.0f;
 	return Lerp(x1, x2, easedT);
 }
+
+
 
 // プレイヤーの弾と敵
 bool IsCollition(const AABB& aabb1, const AABB& aabb2) 
@@ -62,4 +68,22 @@ bool IsCollition4(const AABB4& aabb7, const AABB4& aabb8)
 	return (aabb7.min.x <= aabb8.max.x && aabb7.max.x >= aabb8.min.x) && // x軸
 	       (aabb7.min.y <= aabb8.max.y && aabb7.max.y >= aabb8.min.y) && // y軸
 	       (aabb7.min.z <= aabb8.max.z && aabb7.max.z >= aabb8.min.z);   // z軸
+}
+
+// 加算
+Vector3 operator+(const KamataEngine::Vector3& v1, const Vector3& v2) { return {v1.x + v2.x, v1.y + v2.y, v1.z + v2.z}; }
+
+// 減算
+Vector3 operator-(const Vector3& v1, const Vector3& v2) { return {v1.x - v2.x, v1.y - v2.y, v1.z - v2.z}; }
+
+// スカラー倍
+ Vector3 operator*(const Vector3& v, float s) { return {v.x * s, v.y * s, v.z * s}; }
+
+// +=
+Vector3& operator+=(Vector3& v, const Vector3& v2) {
+	v.x += v2.x;
+	v.y += v2.y;
+	v.z += v2.z;
+
+	return v;
 }
